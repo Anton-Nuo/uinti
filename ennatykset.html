@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Ennätykset – Uintiajat</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div><h1>Uintiajat</h1><p>Uintitulokset ja ennätykset yhdessä paikassa</p></div>
+    <nav aria-label="Päävalikko">
+      <a href="index.html">Tulokset</a>
+      <a href="lisaa.html">Lisää aika</a>
+      <a href="ennatykset.html" aria-current="page">Ennätykset</a>
+    </nav>
+    <button type="button" id="db-yhteys" class="db-btn">Yhdistä db.json</button>
+  </header>
+  <main>
+    <section aria-labelledby="ranking-otsikko">
+      <h2 id="ranking-otsikko">Ennätykset ja ranking</h2>
+      <p>Jokaisen uimarin paras aika valitussa lajissa, nopein ensin.</p>
+      <div class="toolbar">
+        <div class="field"><label for="ranking-laji">Uintilaji</label><select id="ranking-laji"><option>Vapaauinti</option>
+<option>Selkäuinti</option>
+<option>Rintauinti</option>
+<option>Perhosuinti</option>
+<option>Yhdistetty</option></select></div>
+        <div class="field"><label for="ranking-matka">Matka</label><select id="ranking-matka"><option>50</option>
+<option>100</option>
+<option>200</option>
+<option>400</option>
+<option>800</option>
+<option>1500</option></select></div>
+        <div class="field"><label for="ranking-allas">Allas</label><select id="ranking-allas"><option value="25">25 m (lyhyt rata)</option><option value="50">50 m (pitkä rata)</option></select></div>
+      </div>
+      <ol id="ranking" class="ranking" aria-live="polite"><li>Ladataan…</li></ol>
+    </section>
+    <section aria-labelledby="ohje-otsikko">
+      <h2 id="ohje-otsikko">Ohjeet</h2>
+      <details><summary>Miten lisään uintiajan?</summary>
+        <p>Avaa "Lisää aika", täytä lomake ja tallenna. Aika annetaan muodossa 27.42 tai 1:05.32.</p></details>
+      <details><summary>Miten muokkaan tai poistan ajan?</summary>
+        <p>Tulokset-sivulla jokaisella kortilla on Muokkaa- ja Poista-painike. Poisto pyytää vahvistuksen.</p></details>
+      <details><summary>Miten ennätykset lasketaan?</summary>
+        <p>Ennätys on uimarin nopein tallennettu aika samassa lajissa, matkalla ja altaassa. Lyhyen ja pitkän radan ajat pidetään erillään.</p></details>
+    </section>
+  </main>
+  <footer><p>Uintiajat · tiedot tallennetaan JSON-tiedostoon (db.json)</p></footer>
+  <div id="ilmoitus" popover="manual" role="status"></div>
+  <script type="module" src="js/records.js"></script>
+</body>
+</html>

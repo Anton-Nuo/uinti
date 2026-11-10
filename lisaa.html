@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Lisää aika – Uintiajat</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div><h1>Uintiajat</h1><p>Uintitulokset ja ennätykset yhdessä paikassa</p></div>
+    <nav aria-label="Päävalikko">
+      <a href="index.html">Tulokset</a>
+      <a href="lisaa.html" aria-current="page">Lisää aika</a>
+      <a href="ennatykset.html">Ennätykset</a>
+    </nav>
+    <button type="button" id="db-yhteys" class="db-btn">Yhdistä db.json</button>
+  </header>
+  <main>
+    <section aria-labelledby="lisaa-otsikko">
+      <h2 id="lisaa-otsikko">Lisää uusi uintiaika</h2>
+      <form id="lisayslomake" class="card form-card">
+<div class="field"><label for="lisaa-uimari">Uimarin nimi</label>
+  <input id="lisaa-uimari" name="uimari" type="text" required minlength="2" maxlength="50" autocomplete="name"></div>
+<div class="field"><label for="lisaa-syntymavuosi">Syntymävuosi</label>
+  <input id="lisaa-syntymavuosi" name="syntymavuosi" type="number" required min="1930" inputmode="numeric"></div>
+<div class="field"><label for="lisaa-seura">Seura</label>
+  <input id="lisaa-seura" name="seura" type="text" list="seurat" required minlength="2" maxlength="50" autocomplete="organization">
+  <datalist id="seurat"><option value="Cetus Espoo"><option value="Helsingin Uimarit"><option value="Uinti Tampere"><option value="Oulun Uinti 1906"><option value="Åbo Simklubb"><option value="Jyväskylän Aalto"><option value="Kemin Työväen Uimarit"></datalist></div>
+<div class="field"><label for="lisaa-kilpailu">Kilpailu</label>
+  <input id="lisaa-kilpailu" name="kilpailu" type="text" required maxlength="80" autocomplete="off"></div>
+<div class="field"><label for="lisaa-pvm">Päivämäärä</label>
+  <input id="lisaa-pvm" name="pvm" type="date" required min="2000-01-01"></div>
+<div class="field"><label for="lisaa-laji">Uintilaji</label>
+  <select id="lisaa-laji" name="laji" required><option>Vapaauinti</option>
+<option>Selkäuinti</option>
+<option>Rintauinti</option>
+<option>Perhosuinti</option>
+<option>Yhdistetty</option></select></div>
+<div class="field"><label for="lisaa-matka">Matka (m)</label>
+  <select id="lisaa-matka" name="matka" required><option>50</option>
+<option>100</option>
+<option>200</option>
+<option>400</option>
+<option>800</option>
+<option>1500</option></select></div>
+<div class="field"><label for="lisaa-allas">Allas</label>
+  <select id="lisaa-allas" name="allas" required><option value="25">25 m (lyhyt rata)</option><option value="50">50 m (pitkä rata)</option></select></div>
+<div class="field"><label for="lisaa-aika">Aika</label>
+  <input id="lisaa-aika" name="aika" type="text" required inputmode="decimal" autocomplete="off" placeholder="1:05.32" pattern="(\d{1,2}:[0-5]\d|[0-5]?\d)\.\d{2}" title="Muoto 27.42 tai 1:05.32" maxlength="8">
+  <span class="hint">Muoto: ss.hh tai mm:ss.hh, esim. 27.42 tai 1:05.32</span></div>
+        <div class="actions"><button class="btn" type="submit">Tallenna aika</button></div>
+      </form>
+    </section>
+  </main>
+  <footer><p>Uintiajat · tiedot tallennetaan JSON-tiedostoon (db.json)</p></footer>
+  <div id="ilmoitus" popover="manual" role="status"></div>
+  <script type="module" src="js/add.js"></script>
+</body>
+</html>

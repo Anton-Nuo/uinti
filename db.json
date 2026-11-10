@@ -1,0 +1,160 @@
+{
+  "ajat": [
+    {
+      "id": 1,
+      "uimari": "Aino Virtanen",
+      "syntymavuosi": 2006,
+      "seura": "Uinti Tampere",
+      "kilpailu": "Syysmestaruus",
+      "pvm": "2026-10-17",
+      "laji": "Vapaauinti",
+      "matka": 50,
+      "allas": 25,
+      "aika": 2742
+    },
+    {
+      "id": 2,
+      "uimari": "Aino Virtanen",
+      "syntymavuosi": 2006,
+      "seura": "Uinti Tampere",
+      "kilpailu": "Syysmestaruus",
+      "pvm": "2026-10-17",
+      "laji": "Vapaauinti",
+      "matka": 100,
+      "allas": 25,
+      "aika": 5963
+    },
+    {
+      "id": 3,
+      "uimari": "Elias Korhonen",
+      "syntymavuosi": 2004,
+      "seura": "Cetus Espoo",
+      "kilpailu": "Syysmestaruus",
+      "pvm": "2026-10-17",
+      "laji": "Vapaauinti",
+      "matka": 50,
+      "allas": 25,
+      "aika": 2398
+    },
+    {
+      "id": 4,
+      "uimari": "Elias Korhonen",
+      "syntymavuosi": 2004,
+      "seura": "Cetus Espoo",
+      "kilpailu": "Syyscup",
+      "pvm": "2026-09-12",
+      "laji": "Perhosuinti",
+      "matka": 100,
+      "allas": 25,
+      "aika": 5471
+    },
+    {
+      "id": 5,
+      "uimari": "Elias Korhonen",
+      "syntymavuosi": 2004,
+      "seura": "Cetus Espoo",
+      "kilpailu": "Kevätcup",
+      "pvm": "2026-05-02",
+      "laji": "Vapaauinti",
+      "matka": 50,
+      "allas": 25,
+      "aika": 2421
+    },
+    {
+      "id": 6,
+      "uimari": "Mikael Laine",
+      "syntymavuosi": 2003,
+      "seura": "Helsingin Uimarit",
+      "kilpailu": "Syyscup",
+      "pvm": "2026-09-12",
+      "laji": "Vapaauinti",
+      "matka": 50,
+      "allas": 25,
+      "aika": 2415
+    },
+    {
+      "id": 7,
+      "uimari": "Sofia Nieminen",
+      "syntymavuosi": 2008,
+      "seura": "Oulun Uinti 1906",
+      "kilpailu": "Syysmestaruus",
+      "pvm": "2026-10-17",
+      "laji": "Rintauinti",
+      "matka": 100,
+      "allas": 25,
+      "aika": 7288
+    },
+    {
+      "id": 8,
+      "uimari": "Sofia Nieminen",
+      "syntymavuosi": 2008,
+      "seura": "Oulun Uinti 1906",
+      "kilpailu": "Syysmestaruus",
+      "pvm": "2026-10-17",
+      "laji": "Vapaauinti",
+      "matka": 50,
+      "allas": 25,
+      "aika": 2961
+    },
+    {
+      "id": 9,
+      "uimari": "Aino Virtanen",
+      "syntymavuosi": 2006,
+      "seura": "Uinti Tampere",
+      "kilpailu": "Kesämestaruus",
+      "pvm": "2026-06-20",
+      "laji": "Selkäuinti",
+      "matka": 100,
+      "allas": 50,
+      "aika": 6902
+    },
+    {
+      "id": 10,
+      "uimari": "Lauri Mäkinen",
+      "syntymavuosi": 2001,
+      "seura": "Åbo Simklubb",
+      "kilpailu": "Kesämestaruus",
+      "pvm": "2026-06-20",
+      "laji": "Vapaauinti",
+      "matka": 400,
+      "allas": 50,
+      "aika": 24511
+    },
+    {
+      "id": 11,
+      "uimari": "Anton Nuottajärvi",
+      "syntymavuosi": 2000,
+      "seura": "Cetus",
+      "kilpailu": "Grand Prix",
+      "pvm": "2026-11-06",
+      "laji": "Perhosuinti",
+      "matka": 200,
+      "allas": 25,
+      "aika": 12198
+    },
+    {
+      "id": 12,
+      "uimari": "Anton Nuottajärvi",
+      "syntymavuosi": 2000,
+      "seura": "Cetus",
+      "kilpailu": "Grand Prix",
+      "pvm": "2026-11-08",
+      "laji": "Perhosuinti",
+      "matka": 100,
+      "allas": 25,
+      "aika": 5922
+    },
+    {
+      "id": 13,
+      "uimari": "Anton Nuottajärvi",
+      "syntymavuosi": 2000,
+      "seura": "Cetus",
+      "kilpailu": "Grand Prix",
+      "pvm": "2026-11-08",
+      "laji": "Selkäuinti",
+      "matka": 200,
+      "allas": 50,
+      "aika": 12159
+    }
+  ]
+}

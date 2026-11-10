@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Tulokset – Uintiajat</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div><h1>Uintiajat</h1><p>Uintitulokset ja ennätykset yhdessä paikassa</p></div>
+    <nav aria-label="Päävalikko">
+      <a href="index.html" aria-current="page">Tulokset</a>
+      <a href="lisaa.html">Lisää aika</a>
+      <a href="ennatykset.html">Ennätykset</a>
+    </nav>
+    <button type="button" id="db-yhteys" class="db-btn">Yhdistä db.json</button>
+  </header>
+  <main>
+    <section aria-labelledby="tulokset-otsikko">
+      <h2 id="tulokset-otsikko">Tulokset</h2>
+      <div class="toolbar">
+        <div class="field"><label for="haku">Hae uimaria tai seuraa</label>
+          <input id="haku" type="search" autocomplete="off"></div>
+<div class="field"><label for="suodata-laji">Uintilaji</label><select id="suodata-laji"><option value="">Kaikki</option><option>Vapaauinti</option>
+<option>Selkäuinti</option>
+<option>Rintauinti</option>
+<option>Perhosuinti</option>
+<option>Yhdistetty</option></select></div>
+<div class="field"><label for="suodata-matka">Matka</label><select id="suodata-matka"><option value="">Kaikki</option><option>50</option>
+<option>100</option>
+<option>200</option>
+<option>400</option>
+<option>800</option>
+<option>1500</option></select></div>
+<div class="field"><label for="suodata-allas">Allas</label><select id="suodata-allas"><option value="">Kaikki</option><option value="25">25 m (lyhyt rata)</option><option value="50">50 m (pitkä rata)</option></select></div>
+        <div class="field"><label for="jarjestys">Järjestys</label>
+          <select id="jarjestys">
+            <option value="pvm-desc">Uusin ensin</option>
+            <option value="pvm-asc">Vanhin ensin</option>
+            <option value="aika-asc">Nopein ensin</option>
+            <option value="uimari-asc">Nimi A–Ö</option>
+          </select></div>
+      </div>
+      <div id="tulokset" class="grid" aria-live="polite"><p>Ladataan…</p></div>
+    </section>
+  </main>
+
+  <dialog id="muokkausdialogi" aria-labelledby="muokkaus-otsikko">
+    <form id="muokkauslomake">
+      <h2 id="muokkaus-otsikko">Muokkaa aikaa</h2>
+      <input type="hidden" name="id">
+<div class="field"><label for="muok-uimari">Uimarin nimi</label>
+  <input id="muok-uimari" name="uimari" type="text" required minlength="2" maxlength="50" autocomplete="name"></div>
+<div class="field"><label for="muok-syntymavuosi">Syntymävuosi</label>
+  <input id="muok-syntymavuosi" name="syntymavuosi" type="number" required min="1930" inputmode="numeric"></div>
+<div class="field"><label for="muok-seura">Seura</label>
+  <input id="muok-seura" name="seura" type="text" list="seurat" required minlength="2" maxlength="50" autocomplete="organization">
+  <datalist id="seurat"><option value="Cetus Espoo"><option value="Helsingin Uimarit"><option value="Uinti Tampere"><option value="Oulun Uinti 1906"><option value="Åbo Simklubb"><option value="Jyväskylän Aalto"><option value="Kemin Työväen Uimarit"></datalist></div>
+<div class="field"><label for="muok-kilpailu">Kilpailu</label>
+  <input id="muok-kilpailu" name="kilpailu" type="text" required maxlength="80" autocomplete="off"></div>
+<div class="field"><label for="muok-pvm">Päivämäärä</label>
+  <input id="muok-pvm" name="pvm" type="date" required min="2000-01-01"></div>
+<div class="field"><label for="muok-laji">Uintilaji</label>
+  <select id="muok-laji" name="laji" required><option>Vapaauinti</option>
+<option>Selkäuinti</option>
+<option>Rintauinti</option>
+<option>Perhosuinti</option>
+<option>Yhdistetty</option></select></div>
+<div class="field"><label for="muok-matka">Matka (m)</label>
+  <select id="muok-matka" name="matka" required><option>50</option>
+<option>100</option>
+<option>200</option>
+<option>400</option>
+<option>800</option>
+<option>1500</option></select></div>
+<div class="field"><label for="muok-allas">Allas</label>
+  <select id="muok-allas" name="allas" required><option value="25">25 m (lyhyt rata)</option><option value="50">50 m (pitkä rata)</option></select></div>
+<div class="field"><label for="muok-aika">Aika</label>
+  <input id="muok-aika" name="aika" type="text" required inputmode="decimal" autocomplete="off" placeholder="1:05.32" pattern="(\d{1,2}:[0-5]\d|[0-5]?\d)\.\d{2}" title="Muoto 27.42 tai 1:05.32" maxlength="8">
+  <span class="hint">Muoto: ss.hh tai mm:ss.hh, esim. 27.42 tai 1:05.32</span></div>
+      <div class="actions">
+        <button class="btn" type="submit">Tallenna</button>
+        <button class="btn secondary" type="button" id="peruuta-muokkaus">Peruuta</button>
+      </div>
+    </form>
+  </dialog>
+
+
+  <dialog id="poistodialogi" aria-labelledby="poisto-otsikko">
+    <h2 id="poisto-otsikko">Poistetaanko aika?</h2>
+    <p><span id="poistettava"></span> poistetaan pysyvästi.</p>
+    <div class="actions">
+      <button class="btn danger" type="button" id="vahvista-poisto">Poista</button>
+      <button class="btn secondary" type="button" id="peruuta-poisto">Peruuta</button>
+    </div>
+  </dialog>
+  <footer><p>Uintiajat · tiedot tallennetaan JSON-tiedostoon (db.json)</p></footer>
+  <div id="ilmoitus" popover="manual" role="status"></div>
+  <script type="module" src="js/list.js"></script>
+</body>
+</html>
