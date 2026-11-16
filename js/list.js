@@ -1,5 +1,5 @@
 import { getResults, updateResult, deleteResult, formToResult, formatTime, limitDates, showMessage, el } from './api.js';
-
+/*Terve*/
 let results = [];
 const listEl = document.querySelector('#tulokset');
 const filters = {
